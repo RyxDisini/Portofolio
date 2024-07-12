@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Ray</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            position: fixed;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            top: 0;
+            z-index: 1000;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .container {
+            margin-top: 60px;
+            padding: 20px;
+        }
+        .nav {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .nav button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav button:hover {
+            background-color: grey;
+        }
+        .section {
+            padding: 30px 0;
+            text-align: center;
+        }
+        .home, .profile, .contact {
+            min-height: 100vh;
+        }
+        .home {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .home img {
+            width: 50%;
+            height: auto;
+        }
+        .profile, .contact {
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #e0e0e0;
+            color: black;
+            padding: 10px 20px;
+            border: 2px solid #ccc;
+            border-radius: 30px;
+            width: 300px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .contact-button i {
+            margin-right: 10px;
+        }
+        .contact-button:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>JustRay</h1>
+    </div>
+
+    <div class="nav">
+        <button onclick="scrollToSection('home')">
+            <i class="fas fa-house"></i>
+        </button>
+        <button onclick="scrollToSection('profile')">
+            <i class="fas fa-user"></i>
+        </button>
+        <button onclick="scrollToSection('contact')">
+            <i class="fas fa-envelope"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <div id="home" class="section home">
+            <h2>Welcome To My Profile</h2>
+            <img src="https://media1.tenor.com/m/FINRP-1q3FQAAAAd/chizuru-mizuhara-rent-a-girlfriend.gif" alt="Anime GIF">
+            <p>Nice to meet you, oh yeah, don't take this UI/html, I'm too lazy to do it again if I'm cheated on, my hobby is playing/making WhatsApp bots, Want to try My Bot? Please Contact!</p>
+        </div>
+        <div id="profile" class="section profile">
+            <h2>Profile Section</h2>
+            <p>Here's some information about me:</p>
+            <ul>
+                <li>Name: Marick</li>
+                <li>Occupation: Developer</li>
+                <li>Location: Indonesia</li>
+                <li>Skills: JavaScript, HTML/CSS, Node.js</li>
+            </ul>
+        </div>
+        <div id="contact" class="section contact">
+            <h2>Contact Section</h2>
+            <p>Feel free to reach out to me through the following channels:</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/6289510878174" target="_blank" class="contact-button">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://www.instagram.com/justray_id" target="_blank" class="contact-button">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://wa.me/6289510878174?text=.menu" target="_blank" class="contact-button">
+                    <i class="fas fa-robot"></i>
+                    <span>Bot WA</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © My portofolio, Ray with Gpt
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            const headerOffset = 60;
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+</html>
