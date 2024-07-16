@@ -9,6 +9,8 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background: url('https://media1.tenor.com/m/9J4ubEzZqeEAAAAd/japan-aesthetic.gif') no-repeat center center fixed;
+            background-size: cover;
         }
         .header {
             position: fixed;
@@ -35,7 +37,7 @@
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 5px;
         }
         .nav button {
             background-color: black;
@@ -43,10 +45,10 @@
             border: none;
             padding: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 12px;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -55,14 +57,24 @@
             background-color: grey;
         }
         .section {
-            padding: 30px 0;
+            padding: 30px;
             text-align: center;
-        }
-        .home, .profile, .contact {
-            min-height: 100vh;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            display: inline-block;
+            margin: 20px auto;
+            max-width: 600px;
         }
         .home {
-            background-color: #f0f0f0;
+            min-height: 70vh;
+        }
+        .contact {
+            min-height: 80vh;
+        }
+        .profile {
+            min-height: 20vh;
+        }
+        .home {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -71,14 +83,40 @@
         .home img {
             width: 50%;
             height: auto;
+            margin-top: 20px;
         }
         .profile, .contact {
-            background-color: #f9f9f9;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 10px;
+        }
+        .profile .skill-bar {
+            width: 300px;
+            background-color: #ddd;
+            border-radius: 25px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        .profile .skill-bar div {
+            height: 30px;
+            width: 0;
+            background-color: #000000;
+            text-align: right;
+            padding-right: 10px;
+            line-height: 30px;
+            color: white;
+            border-radius: 25px;
+            animation: skill-animation 2s forwards;
+        }
+        @keyframes skill-animation {
+            from { width: 0; }
+            to { width: 75%; }
+        }
+        .profile .skill-bar.nodejs div {
+            background-color: #000000;
+            animation-delay: 0.5s;
         }
         .footer {
             text-align: center;
@@ -88,6 +126,8 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            margin: 0;
+            border-radius: 0 0 20px 20px;
         }
         .contact-buttons {
             display: flex;
@@ -103,9 +143,9 @@
             color: black;
             padding: 10px 20px;
             border: 2px solid #ccc;
-            border-radius: 30px;
-            width: 300px;
-            font-size: 16px;
+            border-radius: 20px;
+            width: 200px;
+            font-size: 14px;
             text-decoration: none;
             transition: background-color 0.3s;
         }
@@ -115,6 +155,56 @@
         .contact-button:hover {
             background-color: #ccc;
         }
+        .image {
+            width: 150px; /* Adjust size as needed */
+            height: 150px; /* Adjust size as needed */
+            border-radius: 50%; /* Make the image round */
+            margin-bottom: 10px;
+        }
+        .link-box {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-family: "Space Mono", monospace;
+            font-weight: bold; /* Make the text bold */
+        }
+        .link-boxes {
+            margin: 2rem 1rem;
+            font-family: Muli, sans-serif;
+            font-weight: 700;
+            font-size: 1.4em;
+            text-transform: capitalize;
+        }
+        .link-boxes a {
+            text-decoration: none;
+            display: block;
+            color: #27213b;
+            border: 0.1rem solid #673146;
+            text-align: center;
+            margin: 0.7rem;
+            border-radius: 0.5rem;
+            padding: 0.3rem;
+            transition: all 200ms ease-in-out;
+            box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+        }
+        .link-boxes a:hover {
+            border: 0.1rem solid #27213b;
+            background-color: #f8923b;
+            cursor: pointer;
+        }
+        main {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .location {
+        text-align: center;
+        margin: 0.7rem;
+        font-size: 1.2rem;
+        font-family: "Space Mono", monospace;
+      }
     </style>
 </head>
 <body>
@@ -138,40 +228,50 @@
         <div id="home" class="section home">
             <h2>Welcome To My Profile</h2>
             <img src="https://media1.tenor.com/m/FINRP-1q3FQAAAAd/chizuru-mizuhara-rent-a-girlfriend.gif" alt="Anime GIF">
-            <p>Nice to meet you, oh yeah, don't take this UI/html, I'm too lazy to do it again if I'm cheated on, my hobby is playing/making WhatsApp bots, Want to try My Bot? Please Contact!</p>
+            <p>Tidak Ada Apa Apa Disini Selain Tulisan Dan Gambar, Hoby Ku Bikin Bot Wa, Ya Sekarang Lagi Belajar Node.js Maklum Masih Pemula Bang Wkwkw</p>
         </div>
         <div id="profile" class="section profile">
-            <h2>Profile Section</h2>
-            <p>Here's some information about me:</p>
-            <ul>
-                <li>Name: Marick</li>
-                <li>Occupation: Developer</li>
-                <li>Location: Indonesia</li>
-                <li>Skills: JavaScript, HTML/CSS, Node.js</li>
-            </ul>
+            <h2>My Skill</h2>
+            <div class="skill-bar">
+                <div>HTML + Basic</div>
+            </div>
+            <div class="skill-bar nodejs">
+                <div>NodeJs + Basic</div>
+            </div>
         </div>
         <div id="contact" class="section contact">
-            <h2>Contact Section</h2>
-            <p>Feel free to reach out to me through the following channels:</p>
-            <div class="contact-buttons">
-                <a href="https://wa.me/6289510878174" target="_blank" class="contact-button">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                </a>
-                <a href="https://www.instagram.com/justray_id" target="_blank" class="contact-button">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
-                <a href="https://wa.me/6289510878174?text=.menu" target="_blank" class="contact-button">
-                    <i class="fas fa-robot"></i>
-                    <span>Bot WA</span>
-                </a>
+            <div class="container shadow">
+                <img class="image" src="https://telegra.ph/file/25abc1ce0757c9b3cce6e.jpg" alt="Faris Picture" loading="lazy">
+                <h1 class="link-box">JustRay
+                    <svg style='margin-bottom:-2px' fill="none" height="20" viewBox="0 0 20 20" width="20">
+                        <path clip-rule="evenodd" d="M8 0L9.99182 1.3121L12.3696 1.29622L13.3431 3.48797L15.3519 4.77336L14.9979 7.14888L16 9.32743L14.431 11.1325L14.1082 13.5126L11.8223 14.1741L10.277 16L8 15.308L5.72296 16L4.17772 14.1741L1.89183 13.5126L1.569 11.1325L0 9.32743L1.00206 7.14888L0.648112 4.77336L2.65693 3.48797L3.6304 1.29622L6.00818 1.3121L8 0Z" fill="#0095F6" fill-rule="evenodd">
+                        </path>
+                        <path clip-rule="evenodd" d="M10.4036 5.20536L7.18853 8.61884L6.12875 7.49364C5.8814 7.23102 5.46798 7.21864 5.20536 7.466C4.94274 7.71335 4.93036 8.12677 5.17771 8.38939L6.71301 10.0195C6.9709 10.2933 7.40616 10.2933 7.66405 10.0195L11.3546 6.10111C11.6019 5.83848 11.5896 5.42507 11.3269 5.17771C11.0643 4.93036 10.6509 4.94274 10.4036 5.20536Z" fill="white" fill-rule="evenodd">
+                        </path>
+                    </svg>
+                </h1>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/6289510878174" target="_blank" class="contact-button">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/justray_id" target="_blank" class="contact-button">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://wa.me/6289510878174?text=.menu" target="_blank" class="contact-button">
+                        <i class="fas fa-robot"></i>
+                        <span>Naomi Ishida</span>
+                    </a>
+                    <p class="location">
+            <i class="fa fa-map-marker icon" aria-hidden="true"></i>Jambi Timur, Indonesia</p>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        © My portofolio, Ray with Gpt
+        © 2024 - Ray With Chatgpt
     </div>
 
     <script>
