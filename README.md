@@ -1,7 +1,3 @@
-# Thanks To :
-<\> ChatGpt
-<\> JustRay
-
 # About Me :
 Hanya Pengembangan Bot Biasa Yang Ingin Naik Drajat.
 
@@ -13,6 +9,6 @@ Hanya Pengembangan Bot Biasa Yang Ingin Naik Drajat.
  - Uploader - Cooming soon
 
 # Thanks To :
-<#> ChatGpt
-<#> JustRay
-<#> Zuki
+- ChatGpt
+- JustRay
+- Zuki
